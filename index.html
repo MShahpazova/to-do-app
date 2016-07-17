@@ -1,17 +1,24 @@
  <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="todo">
   <head>
     <meta charset="UTF-8">
+    <title>todo</title>
     <link rel="stylesheet" href="style.css">
-    <title></title>
+    <script type="text/javascript" src="angular.js"></script>
+    <script src="todo.js"></script>
   </head>
-  <body>
 
-  
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-
-    <script>
+  <body class="well" ng-controller="AppCtrl">
+     <h1>{{userName | uppercase}} ToDo List</h1>
     debugger;
-    </script>
+    <ul class="unstyled">
+      <li ng-repeat="item in items">
+        {{item.done}} 
+        <input ng-model="item.done" type="checkbox">
+        
+        <input ng-model="item.text" ng-disabled="item.disabled" type="text">
+        <input ng-model="item.disabled" type="checkbox">
+      </li>
+    </ul> 
   </body>
-</html
+</html>
